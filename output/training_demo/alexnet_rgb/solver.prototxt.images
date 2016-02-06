@@ -1,0 +1,19 @@
+# cfg: "output/training_demo/alexnet_rgb/config.prototxt.images"
+# deploy_net: "output/training_demo/alexnet_rgb/test.prototxt.images"
+train_net: "output/training_demo/alexnet_rgb/train.prototxt.images"
+
+base_lr: 0.001
+lr_policy: "step"
+gamma: 0.1
+stepsize: 30000
+display: 20
+average_loss: 100
+momentum: 0.9
+weight_decay: 0.0005
+
+# We disable standard caffe solver snapshotting and implement our own snapshot function
+snapshot: 0
+# We still use the snapshot prefix, though
+snapshot_prefix: "fast_rcnn"
+
+# debug_info: true

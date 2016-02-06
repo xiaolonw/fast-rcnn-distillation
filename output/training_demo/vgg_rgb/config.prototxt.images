@@ -1,0 +1,11 @@
+EXP_DIR: training_demo/vgg_rgb
+TRAIN:
+  SCALES: !!python/tuple [600]
+  MAX_SIZE: 2000
+  BBOX_REG: True
+  BG_THRESH_LO: 0.
+  BBOX_PRED_PARAM_NAMES: !!python/tuple ['bbox_pred']
+TEST:
+  BBOX_REG: True
+  SCALES: !!python/tuple [600]
+  MAX_SIZE: 2000

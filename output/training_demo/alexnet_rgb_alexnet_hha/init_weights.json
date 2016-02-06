@@ -1,0 +1,20 @@
+[
+  {
+    "prototxt"  : "output/training_demo/alexnet_rgb/test.prototxt.images",
+    "model"     : "output/training_demo/alexnet_rgb/nyud2_images_2015_trainval/fast_rcnn_iter_40000.caffemodel",
+    "copy_ops"  : {
+      "source"  : ["conv1", "conv2", "conv3", "conv4", "conv5", "fc6", "fc7", "cls_score", "bbox_pred"],
+      "dest"    : ["conv1", "conv2", "conv3", "conv4", "conv5", "fc6", "fc7", "cls_score", "bbox_pred"],
+      "reshape" : [0, 0, 0, 0, 0, 0, 0, 0, 0]
+    }
+  },
+  {
+    "prototxt"  : "output/training_demo/alexnet_hha/test.prototxt.hha",
+    "model"     : "output/training_demo/alexnet_hha/nyud2_hha_2015_trainval/fast_rcnn_iter_40000.caffemodel",
+    "copy_ops"  : {
+      "source"  : ["da_conv1", "da_conv2", "da_conv3", "da_conv4", "da_conv5", "da_fc6", "da_fc7", "da_cls_score", "da_bbox_pred"],
+      "dest"    : ["da_conv1", "da_conv2", "da_conv3", "da_conv4", "da_conv5", "da_fc6", "da_fc7", "da_cls_score", "da_bbox_pred"],
+      "reshape" : [0, 0, 0, 0, 0, 0, 0, 0, 0]
+    }
+  }
+]
