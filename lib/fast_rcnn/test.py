@@ -294,7 +294,14 @@ def test_net(net, imdb):
     for i in xrange(num_images):
         image_paths = imdb.image_path_at(i); im = [];
         for image_path in image_paths:
-            im.append(cv2.imread(image_path))
+            image_path2 = image_paths + '_norm.png'
+            im1 = cv2.imread(image_path)
+            im2 = cv2.imared(image_path2)
+            ims = np.zeros((im1.shape[0], im1.shape[1], 6))
+            ims[:,:,0:3] = im1
+            ims[:,:,3:6] = im2
+            
+            im.append(ims)
         
         _t['im_detect'].tic()
         scores, boxes = im_detect(net, im, roidb[i]['boxes'])
