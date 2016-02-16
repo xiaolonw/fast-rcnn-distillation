@@ -142,8 +142,8 @@ def _get_image_blob(roidb, scale_inds, data_i):
 
         im = np.zeros((im1.shape[0], im1.shape[1], 6))
         im = im.astype('uint8')
-        im[:,:,0:2] = im1
-        im[:,:,3:5] = im2
+        im[:,:,0:3] = im1
+        im[:,:,3:6] = im2
 
         target_size = cfg.TRAIN.SCALES[scale_inds[i]]
         im, im_scale = prep_im_for_blob(im, 127.5, target_size,
