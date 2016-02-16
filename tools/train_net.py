@@ -68,7 +68,7 @@ if __name__ == '__main__':
     if not args.randomize:
         # fix the random seeds (numpy and caffe) for reproducibility
         np.random.seed(cfg.RNG_SEED)
-        caffe.set_random_seed(cfg.RNG_SEED)
+        # caffe.set_random_seed(cfg.RNG_SEED)
 
     # set up caffe
     caffe.set_mode_gpu()
