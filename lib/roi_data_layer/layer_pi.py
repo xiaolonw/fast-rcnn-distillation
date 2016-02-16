@@ -96,7 +96,7 @@ class RoIDataLayerPi(caffe.Layer):
         self._name_to_top_map = {'data': 0};
         # data blob: holds a batch of N images, each with 3 channels
         # The height and width (100 x 100) are dummy values
-        top[0].reshape(1, 3, 100, 100)
+        top[0].reshape(1, 6, 100, 100)  # change to 6
 
         for i in xrange(1, self._num_data):
             self._name_to_top_map['data_{:d}'.format(i)] = i;
