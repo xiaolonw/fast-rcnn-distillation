@@ -72,7 +72,7 @@ if __name__ == '__main__':
 
     # set up caffe
     caffe.set_mode_gpu()
-    caffe.set_logging_level(0)
+    # caffe.set_logging_level(0)
     if args.gpu_id is not None:
         caffe.set_device(args.gpu_id)
 
