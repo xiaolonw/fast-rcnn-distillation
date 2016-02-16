@@ -204,14 +204,14 @@ def im_detect(net, im, boxes):
     if cfg.TEST.SVM:
         # use the raw scores before softmax under the assumption they
         # were trained as linear SVMs
-        scores = net.blobs['cls_score'].data
+        scores = net.blobs['cls_score_1'].data
     else:
         # use softmax estimated probabilities
         scores = blobs_out['cls_prob']
 
     if cfg.TEST.BBOX_REG:
         # Apply bounding-box regression deltas
-        box_deltas = blobs_out['bbox_pred']
+        box_deltas = blobs_out['bbox_pred_1']
         pred_boxes = _bbox_pred(boxes, box_deltas)
         pred_boxes = _clip_boxes(pred_boxes, im[0].shape)
     else:
