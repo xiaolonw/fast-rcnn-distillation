@@ -25,7 +25,7 @@ def _selective_search_IJCV_top_k(split, year, top_k):
 # Set up voc_<year>_<split> using selective search "fast" mode
 for year in ['2015']:
     for split in ['train', 'val', 'trainval', 'test']:
-        for typ in ['hha', 'images', 'images+hha']:
+        for typ in ['hha', 'images', 'images+hha', 'image_norm']:
             name = 'nyud2_{:s}_{:s}_{:s}'.format(typ, year, split)
             __sets[name] = (lambda split=split, year=year, typ=typ :
                     datasets.nyud2_voc(split, year, image_type = typ))

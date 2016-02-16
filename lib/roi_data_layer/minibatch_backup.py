@@ -131,22 +131,11 @@ def _get_image_blob(roidb, scale_inds, data_i):
     processed_ims = []
     im_scales = []
     for i in xrange(num_images):
-        imname1 = roidb[i]['image'][data_i]
-        imname2= imname1 + '_norm.png'
-        im1= cv2.imread(imname1)
-        im2= cv2.imread(imname2) 
+        im = cv2.imread(roidb[i]['image'][data_i])
         if roidb[i]['flipped']:
-            im1 = im1[:, ::-1, :]
-            im2 = im2[:, ::-1, :]
-            im2[:,:,2] = 255 - im2[:,:,2]
-
-        im = np.zeros((im1.shape[0], im1.shape[1], 6))
-        im = im.astype('uint8')
-        im[:,:,0:2] = im1
-        im[:,:,3:5] = im2
-
+            im = im[:, ::-1, :]
         target_size = cfg.TRAIN.SCALES[scale_inds[i]]
-        im, im_scale = prep_im_for_blob(im, 127.5, target_size,
+        im, im_scale = prep_im_for_blob(im, cfg.PIXEL_MEANS, target_size,
                                         cfg.TRAIN.MAX_SIZE)
         im_scales.append(im_scale)
         processed_ims.append(im)
