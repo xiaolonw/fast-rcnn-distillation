@@ -296,7 +296,7 @@ def test_net(net, imdb):
         for image_path in image_paths:
             image_path2 = image_path + '_norm.png'
             im1 = cv2.imread(image_path)
-            im2 = cv2.imared(image_path2)
+            im2 = cv2.imread(image_path2)
             ims = np.zeros((im1.shape[0], im1.shape[1], 6))
             ims[:,:,0:3] = im1
             ims[:,:,3:6] = im2
