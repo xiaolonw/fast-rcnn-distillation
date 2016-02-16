@@ -299,6 +299,9 @@ def test_net(net, imdb):
             im1 = cv2.imread(image_path)
             im2 = cv2.imread(image_path2)
             ims = np.zeros((im1.shape[0], im1.shape[1], 6))
+            # TODO: to test on lua pre-trained model use:
+            # im1 = im1[:, :, ::-1]
+            # im2 = im2[:, :, ::-1]
             ims[:,:,0:3] = im1
             ims[:,:,3:6] = im2
 
