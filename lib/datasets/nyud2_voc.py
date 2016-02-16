@@ -86,7 +86,7 @@ class nyud2_voc(datasets.imdb):
         """
         Return the default path where PASCAL VOC is expected to be installed.
         """
-        return os.path.join('data', 'nyud2')
+        return os.path.join('/scratch/xiaolonw', 'nyud2')
 
     def gt_roidb(self):
         """
