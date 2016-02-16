@@ -135,7 +135,6 @@ def _get_image_blob(roidb, scale_inds, data_i):
         imname2= imname1 + '_norm.png'
         im1= cv2.imread(imname1)
         im2= cv2.imread(imname2) 
-        print(imname2) 
         if roidb[i]['flipped']:
             im1 = im1[:, ::-1, :]
             im2 = im2[:, ::-1, :]
