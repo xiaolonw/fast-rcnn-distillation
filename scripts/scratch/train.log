@@ -9160,3 +9160,11 @@ I0216 21:33:20.742753 30803 solver.cpp:189] Iteration 41340, loss = 0.148676
 I0216 21:33:20.742787 30803 solver.cpp:204]     Train net output #0: da_loss_bbox = 0.17541 (* 0.5 = 0.0877049 loss)
 I0216 21:33:20.742796 30803 solver.cpp:204]     Train net output #1: da_loss_cls = 0.121941 (* 0.5 = 0.0609707 loss)
 I0216 21:33:20.742805 30803 solver.cpp:464] Iteration 41340, lr = 0.001
+I0216 21:33:43.881227 30803 solver.cpp:189] Iteration 41360, loss = 0.0942894
+I0216 21:33:43.881260 30803 solver.cpp:204]     Train net output #0: da_loss_bbox = 0.139233 (* 0.5 = 0.0696164 loss)
+I0216 21:33:43.881268 30803 solver.cpp:204]     Train net output #1: da_loss_cls = 0.0493461 (* 0.5 = 0.024673 loss)
+I0216 21:33:43.881275 30803 solver.cpp:464] Iteration 41360, lr = 0.001
+I0216 21:34:05.223290 30803 solver.cpp:189] Iteration 41380, loss = 0.109255
+I0216 21:34:05.223326 30803 solver.cpp:204]     Train net output #0: da_loss_bbox = 0.138133 (* 0.5 = 0.0690665 loss)
+I0216 21:34:05.223335 30803 solver.cpp:204]     Train net output #1: da_loss_cls = 0.0803773 (* 0.5 = 0.0401887 loss)
+I0216 21:34:05.223341 30803 solver.cpp:464] Iteration 41380, lr = 0.001
