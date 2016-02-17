@@ -1,4 +1,4 @@
-EXP_DIR: scratch
+EXP_DIR: pre_alexnet1
 TRAIN:
   SCALES: !!python/tuple [688]
   MAX_SIZE: 2000
