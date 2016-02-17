@@ -11,11 +11,11 @@ import numpy as np
 
 
 caffe.set_mode_cpu()
-net = caffe.Net('/nfs.yoda/xiaolonw/fast_rcnn/fast-rcnn-distillation/scripts/pre_alexnet3/train.prototxt', caffe.TRAIN)
-headfile = '/nfs.yoda/xiaolonw/torch_projects/weights3/head_r.txt'
+net = caffe.Net('/nfs.yoda/xiaolonw/fast_rcnn/fast-rcnn-distillation/scripts/pre_gan1/train.prototxt', caffe.TRAIN)
+headfile = '/nfs.yoda/xiaolonw/torch_projects/weights4/head_r.txt'
 f = open(headfile, 'r')
 
-savename = '/nfs.yoda/xiaolonw/fast_rcnn/models/pre_alexnet3/fast_rcnn_zero.caffemodel'
+savename = '/nfs.yoda/xiaolonw/fast_rcnn/models/pre_gan1/fast_rcnn_zero.caffemodel'
 
 layer_num = 5
 layernames = ('da_conv1', 'da_conv2', 'da_conv3', 'da_conv4', 'da_conv5')
