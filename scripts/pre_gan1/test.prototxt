@@ -1,5 +1,5 @@
 name: "CaffeNet"
-input: "data_1"
+input: "data"
 input_shape {
   dim: 1
   dim: 6
@@ -16,7 +16,7 @@ input_shape {
 
 
 layer {
-  name: "da_conv1" type: "Convolution" bottom: "data_1" top: "da_conv1"
+  name: "da_conv1" type: "Convolution" bottom: "data" top: "da_conv1"
   param { lr_mult: 1 decay_mult: 1 }
   param { lr_mult: 2 decay_mult: 0 }
   convolution_param { num_output: 64 kernel_size: 5 pad: 2 stride: 2
