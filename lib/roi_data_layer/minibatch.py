@@ -142,8 +142,8 @@ def _get_image_blob(roidb, scale_inds, data_i):
 
         im = np.zeros((im1.shape[0], im1.shape[1], 6))
         im = im.astype('uint8')
-        # im1 = im1[:, :, ::-1]
-        # im2 = im2[:, :, ::-1]
+        im1 = im1[:, :, ::-1]
+        im2 = im2[:, :, ::-1]
         im[:,:,0:3] = im1
         im[:,:,3:6] = im2
 
