@@ -25,18 +25,14 @@ layer {
   }
 }
 layer {
-  name: "da_relu1" type: "ReLU" bottom: "da_conv1" top: "da_conv1" 
+  name: "da_relu1" type: "ReLU" bottom: "da_conv1" top: "da_conv1" relu_param { negative_slope: 0.2 }
 }
 layer {
   name: "da_pool1" type: "Pooling" bottom: "da_conv1" top: "da_pool1"
   pooling_param { pool: MAX kernel_size: 3 pad: 0 stride: 2 }
 }
 layer {
-  name: "da_norm1" type: "LRN" bottom: "da_pool1" top: "da_norm1"
-  lrn_param { local_size: 5 alpha: 0.0001 beta: 0.75 }
-}
-layer {
-  name: "da_conv2" type: "Convolution" bottom: "da_norm1" top: "da_conv2"
+  name: "da_conv2" type: "Convolution" bottom: "da_pool1" top: "da_conv2"
   param { lr_mult: 1 decay_mult: 1 }
   param { lr_mult: 2 decay_mult: 0 }
   convolution_param { num_output: 256 kernel_size: 5 pad: 2 stride: 1 group: 2 
@@ -45,18 +41,14 @@ layer {
   }
 }
 layer { 
-  name: "da_relu2" type: "ReLU" bottom: "da_conv2" top: "da_conv2" 
+  name: "da_relu2" type: "ReLU" bottom: "da_conv2" top: "da_conv2"  relu_param { negative_slope: 0.2 }
 }
 layer {
   name: "da_pool2" type: "Pooling" bottom: "da_conv2" top: "da_pool2"
   pooling_param { pool: MAX kernel_size: 3 pad: 0 stride: 2 }
 }
 layer {
-  name: "da_norm2" type: "LRN" bottom: "da_pool2" top: "da_norm2"
-  lrn_param { local_size: 5 alpha: 0.0001 beta: 0.75 }
-}
-layer {
-  name: "da_conv3" type: "Convolution" bottom: "da_norm2" top: "da_conv3"
+  name: "da_conv3" type: "Convolution" bottom: "da_pool2" top: "da_conv3"
   param { lr_mult: 1 decay_mult: 1 }
   param { lr_mult: 2 decay_mult: 0 }
   convolution_param { num_output: 384 kernel_size: 3 pad: 1 stride: 1 
@@ -65,7 +57,7 @@ layer {
   }
 }
 layer {
-  name: "da_relu3" type: "ReLU" bottom: "da_conv3" top: "da_conv3" 
+  name: "da_relu3" type: "ReLU" bottom: "da_conv3" top: "da_conv3" relu_param { negative_slope: 0.2 }
 }
 layer {
   name: "da_conv4" type: "Convolution" bottom: "da_conv3" top: "da_conv4"
@@ -77,7 +69,7 @@ layer {
   }
 }
 layer {
-  name: "da_relu4" type: "ReLU" bottom: "da_conv4" top: "da_conv4"
+  name: "da_relu4" type: "ReLU" bottom: "da_conv4" top: "da_conv4" relu_param { negative_slope: 0.2 }
 }
 layer {
   name: "da_conv5" type: "Convolution" bottom: "da_conv4" top: "da_conv5"
@@ -89,7 +81,7 @@ layer {
   }
 }
 layer {
-  name: "da_relu5" type: "ReLU" bottom: "da_conv5" top: "da_conv5"
+  name: "da_relu5" type: "ReLU" bottom: "da_conv5" top: "da_conv5" relu_param { negative_slope: 0.2 }
 }
 
 layer {
