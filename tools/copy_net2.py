@@ -33,11 +33,13 @@ for i in xrange(layer_num):
 	param_num = int(f.readline())
 	print(lname_weight) 
 	assert(param_num == 4)
+	read_dim = np.zeros(4)
 	for j in xrange(param_num): 
 		now_num = int(f.readline())
 		print(now_num)
 		print(weight_dims[j])
-		assert(now_num == weight_dims[j])
+		read_dim[j] = now_num
+		# assert(now_num == weight_dims[j])
 
 	names = f.readline()
 	names = names.split(' ')
@@ -51,11 +53,19 @@ for i in xrange(layer_num):
 
 	f2 = open(filename_weight, 'r')
 
+	input_data = np.zeros(read_dim)
+
+	for b in xrange(read_dim[0]):
+		for c in xrange(read_dim[1]):
+			for h in xrange(read_dim[2]):
+				for w in xrange(read_dim[3]):
+					input_data[b][c][h][w] = float(f2.readline())
+
 	for b in xrange(weight_dims[0]):
 		for c in xrange(weight_dims[1]):
 			for h in xrange(weight_dims[2]):
 				for w in xrange(weight_dims[3]):
-					net.params[layer_name][0].data[b][c][h][w] = float(f2.readline())
+					net.params[layer_name][0].data[b][c][h][w] = input_data[b][c][h][w]
 
 	f2.close()
 	# print(net.params[layer_name][0].data[1][2][3][4])
