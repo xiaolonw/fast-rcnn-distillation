@@ -58,6 +58,7 @@ for i in xrange(layer_num):
 					net.params[layer_name][0].data[b][c][h][w] = float(f2.readline())
 
 	f2.close()
+	print(net.params[layer_name][0].data[1][2][3][4])
 
 	f3 = open(filename_bias, 'r')
 
