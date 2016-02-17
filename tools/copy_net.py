@@ -11,11 +11,11 @@ import numpy as np
 
 
 caffe.set_mode_cpu()
-net = caffe.Net('/nfs.yoda/xiaolonw/fast_rcnn/fast-rcnn-distillation/scripts/scratch/train.prototxt', caffe.TRAIN)
+net = caffe.Net('/nfs.yoda/xiaolonw/fast_rcnn/fast-rcnn-distillation/scripts/pre_alexnet1/train.prototxt', caffe.TRAIN)
 headfile = '/nfs.yoda/xiaolonw/torch_projects/weights3/head_r.txt'
 f = open(headfile, 'r')
 
-savename = '/nfs.yoda/xiaolonw/fast_rcnn/models/scratch/fast_rcnn_zero.caffemodel'
+savename = '/nfs.yoda/xiaolonw/fast_rcnn/models/pre_alexnet1/fast_rcnn_zero.caffemodel'
 
 layer_num = 5
 layernames = ('da_conv1', 'da_conv2', 'da_conv3', 'da_conv4', 'da_conv5')
@@ -50,8 +50,8 @@ for i in xrange(layer_num):
 
 	for b in xrange(weight_dims[0]):
 		for c in xrange(weight_dims[1]):
-			for h in xrange(weights_dims[2]):
-				for w in xrange(weights_dims[3]):
+			for h in xrange(weight_dims[2]):
+				for w in xrange(weight_dims[3]):
 					net.params[layer_name][0].data[b][c][h][w] = float(f2.readline())
 
 	f2.close()
