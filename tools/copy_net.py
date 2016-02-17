@@ -31,9 +31,12 @@ for i in xrange(layer_num):
 	vname_weight = names[1]
 	filename_weight = names[2][0:-1] 
 	param_num = int(f.readline())
+	print(lname_weight) 
 	assert(param_num == 4)
 	for j in xrange(param_num): 
 		now_num = int(f.readline())
+		print(now_num)
+		print(weight_dims[j])
 		assert(now_num == weight_dims[j])
 
 	names = f.readline()
