@@ -1,4 +1,4 @@
-EXP_DIR: scratch
+EXP_DIR: scratch_large
 TRAIN:
   SCALES: !!python/tuple [688]
   MAX_SIZE: 2000
