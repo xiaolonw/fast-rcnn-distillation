@@ -1,6 +1,7 @@
 train_net: "/nfs.yoda/xiaolonw/fast_rcnn/fast-rcnn-distillation/scripts/pre_alexnet2_2/train.prototxt"
 
-base_lr: 0.001
+# base_lr: 0.001
+base_lr: 0.0005
 lr_policy: "step"
 gamma: 0.5
 stepsize: 20000

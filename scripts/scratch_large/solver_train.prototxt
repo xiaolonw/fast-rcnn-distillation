@@ -1,6 +1,7 @@
 train_net: "/nfs.yoda/xiaolonw/fast_rcnn/fast-rcnn-distillation/scripts/scratch/train.prototxt"
 
-base_lr: 0.01
+# base_lr: 0.01
+base_lr: 0.005
 lr_policy: "step"
 gamma: 0.5
 stepsize: 20000
