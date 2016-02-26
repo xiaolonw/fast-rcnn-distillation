@@ -88,7 +88,7 @@ class RoIDataLayerPi(caffe.Layer):
         """Setup the RoIDataLayerPi."""
 
         # parse the layer parameter string, which must be valid YAML
-        layer_params = self._parse_args(self.param_str_)
+        layer_params = self._parse_args(self.param_str)
 
         self._num_classes = layer_params.num_classes
         self._num_data = layer_params.num_data
