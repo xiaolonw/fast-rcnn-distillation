@@ -138,7 +138,7 @@ layer {
 }
 
 layer {
-  name: "da_fc6" type: "InnerProduct" bottom: "da_pool5" top: "da_fc6"
+  name: "da_fc62" type: "InnerProduct" bottom: "da_pool5" top: "da_fc62"
   param { lr_mult: 1 decay_mult: 1 }
   param { lr_mult: 2 decay_mult: 0 }
   inner_product_param {
@@ -151,7 +151,7 @@ layer {
 layer {
   name: "bn6_2"
   type: "BatchNorm"
-  bottom: "da_fc6"
+  bottom: "da_fc62"
   top: "bn6_2"
 }
 
@@ -164,7 +164,7 @@ layer {
 }
 
 layer {
-  name: "da_fc7" type: "InnerProduct" bottom: "bn6_2" top: "da_fc7"
+  name: "da_fc72" type: "InnerProduct" bottom: "bn6_2" top: "da_fc72"
   param { lr_mult: 1 decay_mult: 1 }
   param { lr_mult: 2 decay_mult: 0 }
   inner_product_param {
@@ -177,7 +177,7 @@ layer {
 layer {
   name: "bn7"
   type: "BatchNorm"
-  bottom: "da_fc7"
+  bottom: "da_fc72"
   top: "bn7"
 }
 
@@ -192,57 +192,29 @@ layer {
 
 
 layer {
-  name: "da_cls_score"
-  type: "InnerProduct"
-  bottom: "bn7"
-  top: "cls_score_1"
-  param {
-    lr_mult: 1
-    decay_mult: 1
-  }
-  param {
-    lr_mult: 2
-    decay_mult: 0
-  }
+  name: "da_cls_score2" type: "InnerProduct" bottom: "bn7" top:
+  "cls_score_1"
+  param { lr_mult: 1 decay_mult: 1 }
+  param { lr_mult: 2 decay_mult: 0 }
   inner_product_param {
     num_output: 20
-    weight_filler {
-      type: "gaussian"
-      std: 0.01
-    }
-    bias_filler {
-      type: "constant"
-      value: 0
-    }
+    weight_filler { type: "gaussian" std: 0.01 }
+    bias_filler { type: "constant" value: 0 }
   }
 }
-
 
 layer {
-  name: "da_bbox_pred"
-  type: "InnerProduct"
-  bottom: "bn7"
-  top: "bbox_pred_1"
-  param {
-    lr_mult: 1
-    decay_mult: 1
-  }
-  param {
-    lr_mult: 2
-    decay_mult: 0
-  }
+  name: "da_bbox_pred2" type: "InnerProduct" bottom: "bn7" top:
+  "bbox_pred_1"
+  param { lr_mult: 1 decay_mult: 1 }
+  param { lr_mult: 2 decay_mult: 0 }
   inner_product_param {
     num_output: 80
-    weight_filler {
-      type: "gaussian"
-      std: 0.001
-    }
-    bias_filler {
-      type: "constant"
-      value: 0
-    }
+    weight_filler { type: "gaussian" std: 0.001 }
+    bias_filler { type: "constant" value: 0 }
   }
 }
+
 
 
 layer { name: "cls_prob" type: "Softmax" bottom: "cls_score_1" top: "cls_prob" }
