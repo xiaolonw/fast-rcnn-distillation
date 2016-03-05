@@ -3,7 +3,7 @@ train_net: "/nfs.yoda/xiaolonw/fast_rcnn/fast-rcnn-distillation/scripts/pre_gan_
 base_lr: 0.01
 lr_policy: "step"
 gamma: 0.1
-stepsize: 30000
+stepsize: 60000
 display: 20
 average_loss: 100
 momentum: 0.9
