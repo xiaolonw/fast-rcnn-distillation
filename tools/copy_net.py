@@ -11,14 +11,14 @@ import numpy as np
 
 
 caffe.set_mode_cpu()
-net = caffe.Net('/nfs.yoda/xiaolonw/fast_rcnn/fast-rcnn-distillation/scripts/pre_gan_joint4/train.prototxt', caffe.TRAIN)
-headfile = '/nfs.yoda/xiaolonw/torch_projects/weights4/head_r.txt'
+net = caffe.Net('/nfs.yoda/xiaolonw/fast_rcnn/fast-rcnn-distillation/scripts/vggm_rgbd_pre/train.prototxt', caffe.TRAIN)
+headfile = '/nfs.yoda/xiaolonw/torch_projects/weights7/head_r.txt'
 f = open(headfile, 'r')
 
-savename = '/nfs.yoda/xiaolonw/fast_rcnn/models/pre_gan_joint4/fast_rcnn_zero_iter1.caffemodel'
+savename = '/nfs.yoda/xiaolonw/fast_rcnn/models/vggm_rgbd_pre/fast_rcnn_zero.caffemodel'
 
-layer_num = 5
-layernames = ('da_conv1', 'da_conv2', 'da_conv3', 'da_conv4', 'da_conv5')
+layer_num = 6
+layernames = ('da_conv1', 'da_conv2', 'da_conv3', 'da_conv4', 'da_conv5', 'da_conv6')
 
 
 for i in xrange(layer_num):
