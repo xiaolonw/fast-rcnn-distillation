@@ -11,7 +11,7 @@ import numpy as np
 
 
 caffe.set_mode_cpu()
-net = caffe.Net('/nfs.yoda/xiaolonw/fast_rcnn/fast-rcnn-distillation/scripts/vggm_rgbd_pre/train.prototxt', caffe.TRAIN)
+net = caffe.Net('/nfs.yoda/xiaolonw/fast_rcnn/fast-rcnn-distillation/scripts2/vggm_rgbd_pre/train.prototxt', caffe.TRAIN)
 headfile = '/nfs.yoda/xiaolonw/torch_projects/weights7/head_r.txt'
 f = open(headfile, 'r')
 
