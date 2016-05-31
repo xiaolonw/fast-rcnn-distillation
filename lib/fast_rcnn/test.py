@@ -519,7 +519,8 @@ def test_net3(net, imdb, all_boxes2_name):
        
         for j in xrange(1, imdb.num_classes): 
              # adding another scores 
-            scores[:, j] = ( scores[:, j] + all_boxes2[j][i][:, 4] ) / 2
+            scores[:, j] = ( scores[:, j] + all_boxes2[j][i][:, 4] ) / 2 
+            boxes[:, j*4:(j+1)*4] = (boxes[:, j*4:(j+1)*4] + all_boxes2[j][i][:, 0:3] ) / 2
             
             inds = np.where((scores[:, j] > thresh[j]) &
                             (roidb[i]['gt_classes'] == 0))[0]
