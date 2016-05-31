@@ -40,7 +40,10 @@ def parse_args():
                         help='dataset to test',
                         default='voc_2007_test', type=str)
     parser.add_argument('--comp', dest='comp_mode', help='competition mode',
-                        action='store_true')
+                        action='store_true'
+    parser.add_argument('--net2result', dest='another_path',
+                        help='model to combine',
+                        default=None, type=str)
 
     if len(sys.argv) == 1:
         parser.print_help()
@@ -73,9 +76,8 @@ if __name__ == '__main__':
     imdb = get_imdb(args.imdb_name)
     imdb.competition_mode(args.comp_mode)
 
-    # another_path = '/nfs.yoda/xiaolonw/fast_rcnn/fast-rcnn-norm2/output/alexnet_rgb_real/nyud2_images_2015_test/fast_rcnn_iter_40000_rgb/detections.pkl'
-    
-    another_path = '/nfs.yoda/xiaolonw/fast_rcnn/fast-rcnn-norm2/output/joint_rgbnorm/nyud2_images+norm_2015_test/fast_rcnn_joint/detections.pkl'
+    # another_path = '/nfs.yoda/xiaolonw/fast_rcnn/fast-rcnn-norm2/output/alexnet_rgb_real/nyud2_images_2015_test/fast_rcnn_iter_40000_rgb/detections.pkl' 
+    # another_path = '/nfs.yoda/xiaolonw/fast_rcnn/fast-rcnn-norm2/output/joint_rgbnorm/nyud2_images+norm_2015_test/fast_rcnn_joint/detections.pkl'
     test_net3(net, imdb, another_path)
 
 
