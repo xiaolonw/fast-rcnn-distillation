@@ -40,7 +40,7 @@ def parse_args():
                         help='dataset to test',
                         default='voc_2007_test', type=str)
     parser.add_argument('--comp', dest='comp_mode', help='competition mode',
-                        action='store_true'
+                        action='store_true')
     parser.add_argument('--net2result', dest='another_path',
                         help='model to combine',
                         default=None, type=str)
