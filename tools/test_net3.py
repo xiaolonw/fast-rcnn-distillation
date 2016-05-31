@@ -73,9 +73,11 @@ if __name__ == '__main__':
     imdb = get_imdb(args.imdb_name)
     imdb.competition_mode(args.comp_mode)
 
-    another_path = '/nfs.yoda/xiaolonw/fast_rcnn/fast-rcnn-norm2/output/alexnet_rgb_real/nyud2_images_2015_test/fast_rcnn_iter_40000_rgb/detections.pkl'
+    # another_path = '/nfs.yoda/xiaolonw/fast_rcnn/fast-rcnn-norm2/output/alexnet_rgb_real/nyud2_images_2015_test/fast_rcnn_iter_40000_rgb/detections.pkl'
+    
+    another_path = '/nfs.yoda/xiaolonw/fast_rcnn/fast-rcnn-norm2/output/joint_rgbnorm/nyud2_images+norm_2015_test/fast_rcnn_joint/detections.pkl'
     test_net3(net, imdb, another_path)
 
 
 
-    
+
